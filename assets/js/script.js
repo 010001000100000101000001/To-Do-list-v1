@@ -4,6 +4,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskList = document.getElementById('task-list');
     const dingSound = new Audio('assets/audio/ding-126626.mp3');
 
+    //Display the current time and date
+    function updateTime() {
+        const now = new Date();
+        const formattedTime = now.toLocaleTimeString();
+        const formattedDate = now.toLocaleDateString();
+        document.getElementById('current-time').textContent = `Time: ${formattedTime}, Date: ${formattedDate}`;
+    }
+
+    //Update and display task completion statistics
+    function updateTaskStats() {
+        const totalTasks = taskList.children.length;
+        const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
+        const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+        document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
+    }
 
     function addTask() {
         const taskText = taskInput.value.trim();
@@ -29,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             deleteButton.addEventListener('click', function () {
                 listItem.remove();
+                //Update stats on task deletion
+                updateTaskStats();
             });
             checkBox.addEventListener('change', function () {
                 if (checkBox.checked) {
@@ -37,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     taskContent.style.textDecoration = "none";
                 }
+                //Update tasks on task completion
+                updateTaskStats();
             });
         }
     }
@@ -60,15 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
             addTask();
         }
     });
+
+
+    // Call updateTime initially and set an interval to update it every second
+    updateTime();
+    setInterval(updateTime, 1000);
 });
-
-function updateTime() {
-    const now = new Date();
-    const formattedTime = now.toLocaleTimeString();
-    const formattedDate = now.toLocaleDateString();
-    document.getElementById('current-time').textContent = `Time: ${formattedTime}, Date: ${formattedDate}`;
-}
-
-// Call updateTime initially and set an interval to update it every second
-updateTime();
-setInterval(updateTime, 1000);
