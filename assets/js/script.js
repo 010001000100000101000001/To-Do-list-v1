@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Play the ping sound when a new task is added
             pingSound.play();
+            
+            // Update stats after adding a new task
+            updateTaskStats();
         }
     }
 
