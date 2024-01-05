@@ -61,3 +61,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function updateTime() {
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString();
+    const formattedDate = now.toLocaleDateString();
+    document.getElementById('current-time').textContent = `Time: ${formattedTime}, Date: ${formattedDate}`;
+}
+
+// Call updateTime initially and set an interval to update it every second
+updateTime();
+setInterval(updateTime, 1000);
