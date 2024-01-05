@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Font awesome and google fonts-->
+<script src="https://kit.fontawesome.com/6b19d9de88.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <title>To-Do-List</title>
 </head>
 <body>
-    
+    <h1 class="heading">
+        <img class="logo" src="assets/images/logo.png" alt="logo"> To Do List
+        <i class="fa-solid fa-list-check"></i>
+    </h1>
+ 
 
+<!--Task input section -->
+<div id="task-input-container">
+    <input type="text" id="new-task" placeholder="Enter a new task to do">
+    <button id="add-task-btn">Add Task</button>
+    <ul id="task-list"></ul>
+</div>
+
+<!-- Task list display section -->
+<ul id="task-list">
+    <!-- Task items will be added here dynamically -->
+</ul>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
