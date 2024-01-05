@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskList = document.getElementById('task-list');
     const dingSound = new Audio('assets/audio/ding-126626.mp3');
     const pingSound = new Audio('assets/audio/ping-82822.mp3');
+    const deleteSound = new Audio('assets/audio/bong-105459.mp3')
 
     // Display the current time and date
     function updateTime() {
@@ -41,8 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
             listItem.appendChild(deleteButton);
 
             deleteButton.addEventListener('click', function () {
-                listItem.remove();
+                listItem.remove(); 
                 updateTaskStats(); // Update stats on task deletion
+                deleteSound.play(); //Play the delete sound
             });
 
             checkBox.addEventListener('change', function () {
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Play the ping sound when a new task is added
             pingSound.play();
-            
+
             // Update stats after adding a new task
             updateTaskStats();
         }
