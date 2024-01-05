@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('new-task');
     const taskList = document.getElementById('task-list');
     const dingSound = new Audio('assets/audio/ding-126626.mp3');
+    const pingSound = new Audio('assets/audio/ping-82822.mp3');
 
-    //Display the current time and date
+    // Display the current time and date
     function updateTime() {
         const now = new Date();
         const formattedTime = now.toLocaleTimeString();
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('current-time').textContent = `Time: ${formattedTime}, Date: ${formattedDate}`;
     }
 
-    //Update and display task completion statistics
+    // Update and display task completion statistics
     function updateTaskStats() {
         const totalTasks = taskList.children.length;
         const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
@@ -39,14 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
             deleteButton.textContent = "Delete";
             listItem.appendChild(deleteButton);
 
-            taskList.appendChild(listItem);
-            taskInput.value = "";
-
             deleteButton.addEventListener('click', function () {
                 listItem.remove();
-                //Update stats on task deletion
-                updateTaskStats();
+                updateTaskStats(); // Update stats on task deletion
             });
+
             checkBox.addEventListener('change', function () {
                 if (checkBox.checked) {
                     taskContent.style.textDecoration = "line-through";
@@ -54,9 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     taskContent.style.textDecoration = "none";
                 }
-                //Update tasks on task completion
-                updateTaskStats();
+                updateTaskStats(); // Update stats on task completion
             });
+
+            taskList.appendChild(listItem);
+            taskInput.value = "";
+
+            // Play the ping sound when a new task is added
+            pingSound.play();
         }
     }
 
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             element.style.backgroundColor = '#FBE9E7';
         }
     }
-    
+
     addButton.addEventListener('click', addTask);
     taskInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
@@ -80,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
     // Call updateTime initially and set an interval to update it every second
     updateTime();
     setInterval(updateTime, 1000);
 });
+
