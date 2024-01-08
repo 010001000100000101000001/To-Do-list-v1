@@ -20,7 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
         const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
         document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
+
+        // Check if all tasks are completed
+    if (totalTasks > 0 && completedTasks === totalTasks) {
+        // Play the fireworks audio
+        const fireworksSound = new Audio('assets/audio/fireworks.mp3');
+        fireworksSound.play();
+
+        // Display the fireworks image
+        document.getElementById('fireworks-container').style.display = 'flex';
+
+        // Hide fireworks after 15 seconds
+        setTimeout(() => {
+            document.getElementById('fireworks-container').style.display = 'none';
+        }, 15000);
     }
+}
 
     function addTask() {
         const taskText = taskInput.value.trim();
