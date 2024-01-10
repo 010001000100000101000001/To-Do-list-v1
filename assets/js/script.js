@@ -61,18 +61,25 @@ function addTask() {
 
         const taskContent = document.createElement("span");
         taskContent.textContent = taskText;
+
         listItem.appendChild(taskContent);
 
         setColorCoding(taskContent, taskText.length);
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
+        taskContent.style.whiteSpace = 'nowrap';
+        taskContent.style.overflow = 'hidden';
+        taskContent.style.textOverflow = 'ellipsis';
+        taskContent.style.display = 'block';
+        taskContent.style.marginRight = '50px';
         listItem.appendChild(deleteButton);
 
         deleteButton.addEventListener('click', function () {
             listItem.remove();
             updateTaskStats(taskList);
             deleteSound.play();
+    
         });
 
         checkBox.addEventListener('change', function () {
