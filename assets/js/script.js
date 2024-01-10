@@ -16,6 +16,17 @@ function updateTaskStats(taskList) {
     }
 }
 
+function saveTasks() {
+    const tasks = [];
+    Array.from(taskList.children).forEach(li => {
+        tasks.push({
+            text: li.textContent.replace('Delete', '').trim(),
+            completed: li.querySelector("input[type='checkbox']").checked
+        });
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
 function playFireworks() {
     const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
     fireworksSound.play();
@@ -85,20 +96,19 @@ const addButton = document.getElementById('add-task-btn');
 const taskInput = document.getElementById('new-task');
 const taskList = document.getElementById('task-list');
 
-function addTask() {
-    const taskText = taskInput.value.trim();
-    if (taskText) {
-        const listItem = document.createElement("li");
+function addTask(taskText, completed = false) {
+    const listItem = document.createElement("li");
 
-        const checkBox = document.createElement("input");
-        checkBox.type = "checkbox";
-        listItem.appendChild(checkBox);
+    const checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.checked = completed;
+    listItem.appendChild(checkBox);
 
-        const taskContent = document.createElement("span");
-        taskContent.textContent = taskText;
-        listItem.appendChild(taskContent);
+    const taskContent = document.createElement("span");
+    taskContent.textContent = taskText;
+    listItem.appendChild(taskContent);
 
-        setColorCoding(taskContent, taskText.length);
+    setColorCoding(taskContent, taskText.length);
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
@@ -108,6 +118,7 @@ function addTask() {
             listItem.remove();
             updateTaskStats(taskList);
             deleteSound.play();
+            saveTasks();
     
         });
 
@@ -119,22 +130,52 @@ function addTask() {
                 taskContent.style.textDecoration = "none";
             }
             updateTaskStats(taskList);
+            saveTasks();
         });
 
         taskList.appendChild(listItem);
         taskInput.value = "";
         pingSound.play();
         updateTaskStats(taskList);
+        saveTasks();
+    }
+
+// Event Listeners
+addButton.addEventListener('click', function(){
+    if (taskInput.value.trim()) {
+        addTask(taskInput.value.trim());
+    }
+});
+
+taskInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter' && taskInput.value.trim()) {
+        addTask(taskInput.value.trim());
+    }
+});
+
+// Local Storage Functions
+function saveTasks() {
+    const tasks = [];
+    Array.from(taskList.children).forEach(li => {
+        tasks.push({
+            text: li.querySelector("span").textContent,
+            completed: li.querySelector("input[type='checkbox']").checked
+        });
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (savedTasks) {
+        savedTasks.forEach(task => {
+            addTask(task.text, task.completed);
+        });
     }
 }
 
-// Event Listeners
-addButton.addEventListener('click', addTask);
-taskInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        addTask();
-    }
-});
+// Load tasks on page load
+document.addEventListener('DOMContentLoaded', loadTasks);
 
 // Initialize the clock
 updateTime();
