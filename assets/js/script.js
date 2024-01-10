@@ -41,14 +41,49 @@ function setColorCoding(element, length) {
     }
 }
 
+const dingSound = new Audio('assets/audio/ding-126626.mp3');
+const pingSound = new Audio('assets/audio/ping-82822.mp3');
+const deleteSound = new Audio('assets/audio/bong-105459.mp3');
+const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
+
+// Function to mute all audio
+function muteAudio() {
+    dingSound.muted = true;
+    pingSound.muted = true;
+    deleteSound.muted = true;
+    fireworksSound.muted = true;
+}
+
+// Function to unmute all audio
+function unmuteAudio() {
+    dingSound.muted = false;
+    pingSound.muted = false;
+    deleteSound.muted = false;
+    fireworksSound.muted = false;
+}
+
+// Function to adjust volume
+function adjustVolume(level) {
+    dingSound.volume = level;
+    pingSound.volume = level;
+    deleteSound.volume = level;
+    fireworksSound.volume = level;
+}
+
+// Mute audio on page load
+muteAudio();
+
+// Event Listeners for Mute, Unmute, and Volume Control
+document.getElementById('mute-btn').addEventListener('click', muteAudio);
+document.getElementById('unmute-btn').addEventListener('click', unmuteAudio);
+document.getElementById('volume-control').addEventListener('input', function() {
+    adjustVolume(this.value / 100);
+});
+
 // Initialize variables
 const addButton = document.getElementById('add-task-btn');
 const taskInput = document.getElementById('new-task');
 const taskList = document.getElementById('task-list');
-
-const dingSound = new Audio('assets/audio/ding-126626.mp3');
-const pingSound = new Audio('assets/audio/ping-82822.mp3');
-const deleteSound = new Audio('assets/audio/bong-105459.mp3');
 
 function addTask() {
     const taskText = taskInput.value.trim();
