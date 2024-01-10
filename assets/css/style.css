@@ -54,54 +54,9 @@ body {
     background-color: #43a047;
 }
 
-#task-input-list {
+#task-list {
     list-style-type: none;
     padding: 0;
-}
-
-#task-input-list li {
-    background-color: #ffffff;
-    color: #2a2a2a;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s;
-}
-
-#task-input-list li span {
-    font-weight: bold;
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-}
-#task-input-list li button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#task-input-list li button:hover {
-    background-color: #d32f2f;
-}
-
-#task-input-list li:hover {
-    transform: scale(1.05);
-    background-color: #f0f0f0;
-}
-
-#task-list {
-    #task-list {
-        list-style-type: none;
-        padding: 0;
-    }
 }
 
 #task-list li {
@@ -122,8 +77,8 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
 
+}
 #task-list li button {
     background-color: #f44336;
     color: white;
