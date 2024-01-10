@@ -74,8 +74,12 @@ body {
 
 #task-list li span {
     font-weight: bold;
-}
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
+}
 #task-list li button {
     background-color: #f44336;
     color: white;

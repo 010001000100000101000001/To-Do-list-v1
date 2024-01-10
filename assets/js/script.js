@@ -60,13 +60,7 @@ function addTask() {
         listItem.appendChild(checkBox);
 
         const taskContent = document.createElement("span");
-        taskContent.style.whiteSpace = 'nowrap';
-        taskContent.style.overflow = 'hidden';
-        taskContent.style.textOverflow = 'ellipsis';
-        taskContent.style.display = 'block';
-        taskContent.style.marginRight = '50px';
         taskContent.textContent = taskText;
-
         listItem.appendChild(taskContent);
 
         setColorCoding(taskContent, taskText.length);
