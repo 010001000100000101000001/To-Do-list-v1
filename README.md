@@ -56,7 +56,8 @@ The live link can be found here - https://8000-010001000100-todolistv1-isk7b1yyw
 
 ### Media
 
-- Icons used in the app were provided by [Font Awesome](https://fontawesome.com/).
+- Icons used in the app were provided by [Font Awesome](https://fontawesome.com/), the Checklist image used as a logo is from https://freepik.com, the fireworks gif is from https://giphy.com/explore/fireworks and the audio files are from https://pixabay.com/.
+
 
 ### Acknowledgements
 

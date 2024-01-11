@@ -1,3 +1,5 @@
+let fireworksPlayed = false;
+
 function updateTime() {
     const now = new Date();
     const formattedTime = now.toLocaleTimeString();
@@ -5,14 +7,19 @@ function updateTime() {
     document.getElementById('current-time').textContent = `Time: ${formattedTime}, Date: ${formattedDate}`;
 }
 
-function updateTaskStats(taskList) {
+function updateTaskStats(taskList, initialLoad = false) {
     const totalTasks = taskList.children.length;
     const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
     const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
     document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
 
     if (totalTasks > 0 && completedTasks === totalTasks) {
-        playFireworks();
+        if (!fireworksPlayed && !initialLoad) {
+            playFireworks();
+            fireworksPlayed = true;
+        }
+    } else {
+        fireworksPlayed = false;
     }
 }
 
@@ -25,18 +32,6 @@ function saveTasks() {
         });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-function playFireworks() {
-    const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
-    fireworksSound.play();
-
-    const fireworksContainer = document.getElementById('fireworks-container');
-    fireworksContainer.style.display = 'flex';
-
-    setTimeout(() => {
-        fireworksContainer.style.display = 'none';
-    }, 15000);
 }
 
 function setColorCoding(element, length) {
@@ -81,13 +76,26 @@ function adjustVolume(level) {
     fireworksSound.volume = level;
 }
 
+//Fireworks Display
+function playFireworks() {
+    const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
+    fireworksSound.play();
+
+    const fireworksContainer = document.getElementById('fireworks-container');
+    fireworksContainer.style.display = 'flex';
+
+    setTimeout(() => {
+        fireworksContainer.style.display = 'none';
+    }, 15000);
+}
+
 // Mute audio on page load
 muteAudio();
 
 // Event Listeners for Mute, Unmute, and Volume Control
 document.getElementById('mute-btn').addEventListener('click', muteAudio);
 document.getElementById('unmute-btn').addEventListener('click', unmuteAudio);
-document.getElementById('volume-control').addEventListener('input', function() {
+document.getElementById('volume-control').addEventListener('input', function () {
     adjustVolume(this.value / 100);
 });
 
@@ -110,38 +118,37 @@ function addTask(taskText, completed = false) {
 
     setColorCoding(taskContent, taskText.length);
 
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        listItem.appendChild(deleteButton);
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    listItem.appendChild(deleteButton);
 
-        deleteButton.addEventListener('click', function () {
-            listItem.remove();
-            updateTaskStats(taskList);
-            deleteSound.play();
-            saveTasks();
-    
-        });
-
-        checkBox.addEventListener('change', function () {
-            if (checkBox.checked) {
-                taskContent.style.textDecoration = "line-through";
-                dingSound.play();
-            } else {
-                taskContent.style.textDecoration = "none";
-            }
-            updateTaskStats(taskList);
-            saveTasks();
-        });
-
-        taskList.appendChild(listItem);
-        taskInput.value = "";
-        pingSound.play();
+    deleteButton.addEventListener('click', function () {
+        listItem.remove();
         updateTaskStats(taskList);
+        deleteSound.play();
         saveTasks();
-    }
+
+    });
+
+    checkBox.addEventListener('change', function () {
+        if (checkBox.checked) {
+            taskContent.style.textDecoration = "line-through";
+            dingSound.play();
+        } else {
+            taskContent.style.textDecoration = "none";
+        }
+        saveTasks();
+    });
+
+    taskList.appendChild(listItem);
+    taskInput.value = "";
+    pingSound.play();
+    updateTaskStats(taskList);
+    saveTasks();
+}
 
 // Event Listeners
-addButton.addEventListener('click', function(){
+addButton.addEventListener('click', function () {
     if (taskInput.value.trim()) {
         addTask(taskInput.value.trim());
     }
@@ -172,6 +179,7 @@ function loadTasks() {
             addTask(task.text, task.completed);
         });
     }
+    updateTaskStats(taskList, true);
 }
 
 // Load tasks on page load
