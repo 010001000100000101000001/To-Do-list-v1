@@ -12,11 +12,11 @@ function updateTaskStats(taskList, initialLoad = false) {
     const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
     const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
     document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
-
-    if (initialLoad) {
-        fireworksPlayed = completedTasks === totalTasks;
-    } else if (totalTasks > 0 && completedTasks === totalTasks && !fireworksPlayed) {
-        playFireworks();
+    
+    if (totalTasks > 0 && completedTasks === totalTasks && !fireworksPlayed) {
+        if (!initialLoad) {
+            playFireworks();
+        }
         fireworksPlayed = true;
     }
 }
@@ -137,6 +137,12 @@ function addTask(taskText, completed = false) {
         }
         saveTasks();
         updateTaskStats(taskList);
+
+        // Check if all tasks are completed after this task is checked off
+        const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
+        if (completedTasks === totalTasks) {
+            playFireworks();
+        }
     });
 
     taskList.appendChild(listItem);
@@ -178,7 +184,15 @@ function loadTasks() {
             addTask(task.text, task.completed);
         });
     }
-    updateTaskStats(taskList, true);
+   // Check if all tasks are completed after loading
+   const totalTasks = taskList.children.length;
+   const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
+   
+   updateTaskStats(taskList, true);
+
+   if (completedTasks === totalTasks) {
+       playFireworks();
+   }
 }
 
 // Load tasks on page load
