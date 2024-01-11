@@ -13,13 +13,11 @@ function updateTaskStats(taskList, initialLoad = false) {
     const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
     document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
 
-    if (totalTasks > 0 && completedTasks === totalTasks) {
-        if (!fireworksPlayed && !initialLoad) {
-            playFireworks();
-            fireworksPlayed = true;
-        }
-    } else {
-        fireworksPlayed = false;
+    if (initialLoad) {
+        fireworksPlayed = completedTasks === totalTasks;
+    } else if (totalTasks > 0 && completedTasks === totalTasks && !fireworksPlayed) {
+        playFireworks();
+        fireworksPlayed = true;
     }
 }
 
@@ -138,6 +136,7 @@ function addTask(taskText, completed = false) {
             taskContent.style.textDecoration = "none";
         }
         saveTasks();
+        updateTaskStats(taskList);
     });
 
     taskList.appendChild(listItem);
