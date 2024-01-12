@@ -13,12 +13,31 @@ function updateTaskStats(taskList, initialLoad = false) {
     const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
     document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
     
+    if (!initialLoad) {
+        checkAndPlayFireworks();
+    }
+}
+
+function checkAndPlayFireworks() {
+    const totalTasks = taskList.children.length;
+    const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
+
     if (totalTasks > 0 && completedTasks === totalTasks && !fireworksPlayed) {
-        if (!initialLoad) {
-            playFireworks();
-        }
+        playFireworks();
         fireworksPlayed = true;
     }
+}
+
+function playFireworks() {
+    const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
+    fireworksSound.play();
+
+    const fireworksContainer = document.getElementById('fireworks-container');
+    fireworksContainer.style.display = 'flex';
+
+    setTimeout(() => {
+        fireworksContainer.style.display = 'none';
+    }, 5000);
 }
 
 function saveTasks() {
@@ -30,6 +49,16 @@ function saveTasks() {
         });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (savedTasks) {
+        savedTasks.forEach(task => {
+            addTask(task.text, task.completed);
+        });
+    }
+    updateTaskStats(taskList, true);
 }
 
 function setColorCoding(element, length) {
@@ -72,19 +101,6 @@ function adjustVolume(level) {
     pingSound.volume = level;
     deleteSound.volume = level;
     fireworksSound.volume = level;
-}
-
-//Fireworks Display
-function playFireworks() {
-    const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
-    fireworksSound.play();
-
-    const fireworksContainer = document.getElementById('fireworks-container');
-    fireworksContainer.style.display = 'flex';
-
-    setTimeout(() => {
-        fireworksContainer.style.display = 'none';
-    }, 15000);
 }
 
 // Mute audio on page load
@@ -184,6 +200,9 @@ function loadTasks() {
             addTask(task.text, task.completed);
         });
     }
+    updateTaskStats(taskList, true);
+}
+
    // Check if all tasks are completed after loading
    const totalTasks = taskList.children.length;
    const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
@@ -193,7 +212,6 @@ function loadTasks() {
    if (completedTasks === totalTasks) {
        playFireworks();
    }
-}
 
 // Load tasks on page load
 document.addEventListener('DOMContentLoaded', loadTasks);
