@@ -53,15 +53,14 @@ The application has been thoroughly tested to ensure most of the features work c
 The To-Do List Application was deployed on GitHub pages with the following steps:
 
 1. In the GitHub repository, navigate to the Settings tab.
-2. From the source section drop-down menu, select the Master Branch.
-3. Once the master branch has been selected, the page will provide a link to the completed deployment.
-
-The live link can be found here - https://010001000100000101000001.github.io/To-Do-list-v1/
+2. From the source section drop-down menu, select the Main Branch.
+3. Once the main branch has been selected, the page will provide a link to the completed deployment.
+   
 ## Credits
 
 ### Content
 
-- The instructions for implementing local storage were adapted from [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) and tutorials on youtube.
+- The instructions  implementing local storage were adapted from [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) tutorials on youtube,  https://www.w3schools.com/ tutorials and https://www.freecodecamp.org/. 
 
 ### Media
 
