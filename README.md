@@ -35,9 +35,6 @@ The application has been thoroughly tested to ensure most of the features work c
 - **CSS**: No errors were found when passing through the official (Jigsaw) validator.
 - **JavaScript**: No errors were found when passing through the official JSHint validator.
 
-### Unfixed Bugs
-
-Fireworks display is not working as intended at the moment.
 
 ## Deployment
 
