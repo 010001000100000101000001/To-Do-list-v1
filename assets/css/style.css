@@ -157,3 +157,16 @@ body {
 #volume-control:focus {
     outline: none;
 }
+
+.footer {
+    background-color: #ffffff;
+    color: #4a4a4a;
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    border-top: 3px solid #e0e0e0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
