@@ -27,7 +27,7 @@ Tasks input on this site are not private and information may be visible to other
 
 ## Testing
 
-The application has been thoroughly tested to ensure all features work correctly. Additionally, the responsiveness is confirmed across multiple devices and browsers, providing a seamless experience for all users.
+The application has been thoroughly tested to ensure most of the features work correctly. Additionally, the responsiveness is confirmed across multiple devices and browsers, providing a seamless experience for all users.
 
 ### Validator Testing
 
@@ -37,7 +37,7 @@ The application has been thoroughly tested to ensure all features work correctly
 
 ### Unfixed Bugs
 
-
+Fireworks display is not working as intended at the moment.
 
 ## Deployment
 
@@ -47,12 +47,12 @@ The To-Do List Application was deployed on GitHub pages with the following steps
 2. From the source section drop-down menu, select the Master Branch.
 3. Once the master branch has been selected, the page will provide a link to the completed deployment.
 
-The live link can be found here - https://8000-010001000100-todolistv1-isk7b1yywwm.ws-eu107.gitpod.io/
+The live link can be found here - https://010001000100000101000001.github.io/To-Do-list-v1/
 ## Credits
 
 ### Content
 
-- The instructions for implementing local storage were adapted from [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+- The instructions for implementing local storage were adapted from [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) and tutorials on youtube.
 
 ### Media
 
