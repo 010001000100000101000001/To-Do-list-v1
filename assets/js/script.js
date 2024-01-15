@@ -29,9 +29,6 @@ function checkAndPlayFireworks() {
 }
 
 function playFireworks() {
-    const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
-    fireworksSound.play();
-
     const fireworksContainer = document.getElementById('fireworks-container');
     fireworksContainer.style.display = 'flex';
 
@@ -77,14 +74,12 @@ function setColorCoding(element, length) {
 const dingSound = new Audio('assets/audio/ding-126626.mp3');
 const pingSound = new Audio('assets/audio/ping-82822.mp3');
 const deleteSound = new Audio('assets/audio/bong-105459.mp3');
-const fireworksSound = new Audio('assets/audio/fireworks-150296.mp3');
 
 // Function to mute all audio
 function muteAudio() {
     dingSound.muted = true;
     pingSound.muted = true;
     deleteSound.muted = true;
-    fireworksSound.muted = true;
 }
 
 // Function to unmute all audio
@@ -92,7 +87,6 @@ function unmuteAudio() {
     dingSound.muted = false;
     pingSound.muted = false;
     deleteSound.muted = false;
-    fireworksSound.muted = false;
 }
 
 // Function to adjust volume
@@ -100,7 +94,6 @@ function adjustVolume(level) {
     dingSound.volume = level;
     pingSound.volume = level;
     deleteSound.volume = level;
-    fireworksSound.volume = level;
 }
 
 // Mute audio on page load
