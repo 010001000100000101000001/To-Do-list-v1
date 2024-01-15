@@ -13,9 +13,21 @@
 - **Add Task Button**: Users can submit their new tasks to the list using this button.
 - **Task Display**: Displays all current tasks so users can see their items at a glance.
 - **Task Management**: Each task comes with a checkbox for marking completion and a delete button for removal.
+
+  ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/ac638540-a6f2-4226-9696-dbb76e7fe7b8)
+
+
 - **Audio Feedback**: Provides sound notifications when tasks are added, completed, or deleted, enhancing the interactive experience.
-- **Local Storage**: Tasks are saved in the user's browser, allowing them to persist between sessions.
 - **Real-Time Clock**: Displays the current time and date, helping users keep track of when tasks were added.
+
+  ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/9a67b04e-80b5-4805-90fd-2a8df3678ff1)
+
+- **Local Storage**: Tasks are saved in the user's browser, allowing them to persist between sessions.
+
+
+
+  ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/1cd85beb-cb3f-4d15-b53f-3115698f9ff3)
+
 
 ### Important
 Tasks input on this site are not private and information may be visible to others
