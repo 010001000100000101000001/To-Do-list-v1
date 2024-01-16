@@ -53,7 +53,7 @@ The application is designed to be fully responsive, ensuring that it works seaml
 
 
 ## Accessibility Improvements:
- The use of the Contrast Grid tool (https://contrast-grid.eightshapes.com/) ensures that the application meets accessibility standards by enhancing color contrast. This feature is crucial for making the app usable for people with visual impairments. The Contrast Grid tool (https://contrast-grid.eightshapes.com/) was used to evaluate and adjust color contrast in the application. The color of the "Add Task" button was changed to #e8422 for improved readability, making the application more accessible to users with varying visual abilities.
+ The use of the Contrast Grid tool (https://contrast-grid.eightshapes.com/) ensures that the application meets accessibility standards by enhancing color contrast. This feature is crucial for making the app usable for people with visual impairments. The Contrast Grid tool (https://contrast-grid.eightshapes.com/) was used to evaluate and adjust color contrast in the application. The color of the "Add Task" button was changed to #1e8422 for improved readability, making the application more accessible to users with varying visual abilities.
 
 ## Lighthouse:
 The Lighthouse tool was employed to assess the overall performance, accessibility, best practices, and SEO of the application. This helped identify areas for improvement and optimize the application for a better user experience
