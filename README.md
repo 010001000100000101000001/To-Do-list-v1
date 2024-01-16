@@ -14,7 +14,8 @@
 - **Task Display**: The application displays all current tasks in a visually organized list, making it easy for users to see their items at a glance. This feature helps users keep track of their to-do items effectively.
 - **Task Management**: Each task in the list comes with a checkbox for marking completion and a delete button for removal. This feature streamlines task management, allowing users to mark tasks as done and remove completed or unwanted tasks effortlessly.
 
-  ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/ac638540-a6f2-4226-9696-dbb76e7fe7b8)
+![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/dbd4373b-01fb-4df4-8a10-8c05d8924e7f)
+ 
 
 
 - **Audio Feedback**: Audio notifications for adding, completing, or deleting tasks add an interactive element to the application. These auditory cues provide immediate feedback to users, enhancing the overall user experience and engagement.
@@ -26,7 +27,8 @@
 
 
 
-  ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/1cd85beb-cb3f-4d15-b53f-3115698f9ff3)
+![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/cd6ec086-dfd4-423a-80d7-5bc61a120a6d)
+
 
 
 ### Important
