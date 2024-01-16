@@ -9,15 +9,15 @@
 
 ### Existing Features
 
-- **Task Input**: A text input field allows users to enter new tasks into the list easily.
-- **Add Task Button**: Users can submit their new tasks to the list using this button.
-- **Task Display**: Displays all current tasks so users can see their items at a glance.
-- **Task Management**: Each task comes with a checkbox for marking completion and a delete button for removal.
+- **Task Input**: A text input field allows users to enter new tasks into the list. This feature is essential for adding tasks to the to-do list conveniently.
+- **Add Task Button**: Users can submit their new tasks to the list using this button. The "Add Task" button provides a clear and intuitive way for users to submit their new tasks to the list. It enhances user experience by guiding them in the task creation process.
+- **Task Display**: The application displays all current tasks in a visually organized list, making it easy for users to see their items at a glance. This feature helps users keep track of their to-do items effectively.
+- **Task Management**: Each task in the list comes with a checkbox for marking completion and a delete button for removal. This feature streamlines task management, allowing users to mark tasks as done and remove completed or unwanted tasks effortlessly.
 
   ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/ac638540-a6f2-4226-9696-dbb76e7fe7b8)
 
 
-- **Audio Feedback**: Provides sound notifications when tasks are added, completed, or deleted, enhancing the interactive experience.
+- **Audio Feedback**: Audio notifications for adding, completing, or deleting tasks add an interactive element to the application. These auditory cues provide immediate feedback to users, enhancing the overall user experience and engagement.
 - **Real-Time Clock**: Displays the current time and date, helping users keep track of when tasks were added.
 
   ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/9a67b04e-80b5-4805-90fd-2a8df3678ff1)
@@ -47,6 +47,16 @@ The application has been thoroughly tested to ensure most of the features work c
 - **CSS**: No errors were found when passing through the official (Jigsaw) validator.
 - **JavaScript**: No errors were found when passing through the official JSHint validator.
 
+## Responsive Design:
+The application is designed to be fully responsive, ensuring that it works seamlessly on different screen sizes and devices. This responsiveness is tested using browser developer tools and real devices. Browser developer tools were utilized to test breakpoints and responsiveness on different screen sizes.
+
+
+
+## Accessibility Improvements:
+ The use of the Contrast Grid tool (https://contrast-grid.eightshapes.com/) ensures that the application meets accessibility standards by enhancing color contrast. This feature is crucial for making the app usable for people with visual impairments. The Contrast Grid tool (https://contrast-grid.eightshapes.com/) was used to evaluate and adjust color contrast in the application. The color of the "Add Task" button was changed to #e8422 for improved readability, making the application more accessible to users with varying visual abilities.
+
+## Lighthouse:
+The Lighthouse tool was employed to assess the overall performance, accessibility, best practices, and SEO of the application. This helped identify areas for improvement and optimize the application for a better user experience
 
 ## Deployment
 
