@@ -30,6 +30,12 @@
 ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/cd6ec086-dfd4-423a-80d7-5bc61a120a6d)
 
 
+### Fireworks Display
+A Fireworks display is triggered when all tasks are completed for a nice celebration after the list of tasks are done.
+
+![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/6836b6cd-7d6c-458c-bfdb-9bcbb70c46ad)
+
+
 
 ### Important
 Tasks input on this site are not private and information may be visible to others
