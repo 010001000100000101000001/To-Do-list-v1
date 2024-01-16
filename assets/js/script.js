@@ -14,17 +14,16 @@ function updateTaskStats(taskList, initialLoad = false) {
     document.getElementById('task-stats').textContent = `Tasks Completed: ${completionRate}%`;
     
     if (!initialLoad) {
-        checkAndPlayFireworks();
+        checkAndPlayFireworks(completionRate);
     }
 }
 
-function checkAndPlayFireworks() {
-    const totalTasks = taskList.children.length;
-    const completedTasks = Array.from(taskList.children).filter(li => li.querySelector("input[type='checkbox']").checked).length;
-
-    if (totalTasks > 0 && completedTasks === totalTasks && !fireworksPlayed) {
+function checkAndPlayFireworks(completionRate) {
+   
+    if (completionRate === 100 && !fireworksPlayed) {
         playFireworks();
         fireworksPlayed = true;
+        
     }
 }
 
