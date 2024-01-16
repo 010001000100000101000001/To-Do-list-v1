@@ -36,6 +36,12 @@ function playFireworks() {
     }, 5000);
 }
 
+window.onload = () => {
+    updateTime();
+    const taskList = document.getElementById('task-list');
+    updateTaskStats(taskList, true);
+};
+
 function saveTasks() {
     const tasks = [];
     Array.from(taskList.children).forEach(li => {
