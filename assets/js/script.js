@@ -65,14 +65,14 @@ function loadTasks() {
 
 function setColorCoding(element, length) {
     if (length < 10) {
-        element.style.color = '#4CAF50';
-        element.style.backgroundColor = '#E8F5E9';
+        element.style.color = '#000000';
+        element.style.backgroundColor = '#4CAF50';
     } else if (length < 20) {
-        element.style.color = '#FF9800';
-        element.style.backgroundColor = '#FFF3E0';
+        element.style.color = '#000000';
+        element.style.backgroundColor = '#FFC107';
     } else {
-        element.style.color = '#D32F2F';
-        element.style.backgroundColor = '#FBE9E7';
+        element.style.color = '#000000';
+        element.style.backgroundColor = '#F44336';
     }
 }
 
