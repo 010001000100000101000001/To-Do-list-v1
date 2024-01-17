@@ -1,3 +1,4 @@
+/* Global Styles*/
 body {
     font-family: 'Ubuntu', sans-serif;
     background-color: #e6eeff;
@@ -5,6 +6,7 @@ body {
     margin: 0;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -17,25 +19,12 @@ body {
     border-radius: 10px;
 }
 
+/* Task Input and Button Styles */
 .heading {
     text-align: center;
     width: 100%;
     margin: 0;
     color: #2a2a2a;
-}
-
-/* Media Query: Break title at 320px and switch to flex-direction: column */
-@media (max-width: 320px) {
-    .heading {
-        flex-direction: column;
-    }
-}
-
-/* Media Query: Display title as block at 400px */
-@media (max-width: 400px) {
-    .heading {
-        display: block;
-    }
 }
 
 #task-input-container {
@@ -54,24 +43,6 @@ body {
     border: 1px solid #ccc;
     margin-right: 10px;
     color:#2a2a2a
-}
-
-@media (max-width: 320px) {
-    #new-task {
-        width: 90%;
-    }
-}
-
-@media (min-width: 321px) and (max-width: 420px) {
-    #new-task {
-        width: 94%;
-    }
-}
-
-@media (min-width: 421px) and (max-width: 600px) {
-    #new-task {
-        width: 96%;
-    }
 }
 
 #add-task-btn {
@@ -142,8 +113,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 110vw;
+    height: 110vh;
     justify-content: center;
     align-items: center;
     z-index: 99;
@@ -151,6 +122,7 @@ body {
 }
 
 #fireworks-container img {
+    height: 34vh;
     border-radius: 15px;
 }
 
@@ -215,4 +187,28 @@ body {
     bottom: 0;
     width: 100%;
     border-radius: 10px;
+}
+
+/* Media Queries */
+
+@media (max-width: 320px) {
+    .heading {
+        flex-direction: column;
+    }
+
+    #new-task {
+        width: 90%;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 420px) {
+    #new-task {
+        width: 94%;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 600px) {
+    #new-task {
+        width: 96%;
+    }
 }
