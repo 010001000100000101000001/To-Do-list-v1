@@ -14,11 +14,13 @@
 - **Task Display**: The application displays all current tasks in a visually organized list, making it easy for users to see their items at a glance. This feature helps users keep track of their to-do items effectively.
 - **Task Management**: Each task in the list comes with a checkbox for marking completion and a delete button for removal. This feature streamlines task management, allowing users to mark tasks as done and remove completed or unwanted tasks effortlessly.
 
-![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/dbd4373b-01fb-4df4-8a10-8c05d8924e7f)
+![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/3bee435b-05e3-4e2a-bda9-80eff1f1275c)
+
  
 
 
 - **Audio Feedback**: Audio notifications for adding, completing, or deleting tasks add an interactive element to the application. These auditory cues provide immediate feedback to users, enhancing the overall user experience and engagement.
+- **Tasks Stats**: Tasks stats percentage bar shows the user the percentage of tasks currently completed.
 - **Real-Time Clock**: Displays the current time and date, helping users keep track of when tasks were added.
 
   ![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/9a67b04e-80b5-4805-90fd-2a8df3678ff1)
@@ -31,9 +33,10 @@
 
 
 ### Fireworks Display
-A Fireworks display is triggered when all tasks are completed for a nice celebration after the list of tasks are done.
+A Fireworks display is triggered when all tasks are completed for a nice celebration after the list of tasks are done. The fireworks display when the page is loaded to notify the user of the feature before they finish all their tasks as a motivational tool.
 
-![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/6836b6cd-7d6c-458c-bfdb-9bcbb70c46ad)
+![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/abb643b6-1a76-4c11-ad4b-fd46c4159f4a)
+
 
 
 
