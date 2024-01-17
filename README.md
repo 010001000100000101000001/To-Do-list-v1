@@ -69,7 +69,8 @@ The application is designed to be fully responsive, ensuring that it works seaml
 ## Lighthouse:
 The Lighthouse tool was employed to assess the overall performance, accessibility, best practices, and SEO of the application. This helped identify areas for improvement and optimize the application for a better user experience
 
-![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/1f4733de-534a-4485-ac90-13f0d60c9200)
+![image](https://github.com/010001000100000101000001/To-Do-list-v1/assets/147556282/e22aaec9-6e24-4350-8cc8-f599fd53568f)
+
 
 
 ## Deployment
