@@ -85,7 +85,7 @@ The To-Do List Application was deployed on GitHub pages with the following steps
 
 ### Content
 
-- The instructions  implementing local storage were adapted from [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) tutorials on youtube,  https://www.w3schools.com/ tutorials and https://www.freecodecamp.org/. 
+- The instructions  implementing local storage were adapted from [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) tutorials on youtube,  https://www.w3schools.com/ tutorials and https://www.freecodecamp.org/. I used code from all these sources and many youtube videos for this project.
 
 ### Media
 
