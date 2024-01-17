@@ -89,7 +89,7 @@ The To-Do List Application was deployed on GitHub pages with the following steps
 
 ### Media
 
-- Icons used in the app were provided by [Font Awesome](https://fontawesome.com/), the Checklist image used as a logo is from https://freepik.com, the fireworks gif is from https://giphy.com/explore/fireworks and the audio files are from https://pixabay.com/.
+- Icons used in the app were provided by [Font Awesome](https://fontawesome.com/), the Checklist image used as a logo is from https://freepik.com, the fireworks gif is from https://tenor.com/ and the audio files are from https://pixabay.com/.
 
 
 ### Acknowledgements
